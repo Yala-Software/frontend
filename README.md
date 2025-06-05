@@ -27,7 +27,7 @@ Se han implementado los siguientes requisitos no funcionales para asegurar la ro
     * **Usuario X:** S/. 100, USD 200
     * **Usuario Y:** S/. 50, USD 100
 * **Acceso por Endpoints:** Todas las operaciones y consultas se realizan a través de endpoints RESTful.
-* **Lenguaje de Implementación:** El lenguaje de programación utilizado es **[Python / Java / Node.js / *su elección aquí*]**.
+* **Lenguaje de Implementación:** El lenguaje de programación utilizado es **[Python / Java / Node.js /]**.
 * **Integración con Múltiples APIs de Cambio:** Se han integrado al menos dos APIs externas para la consulta de tasas de cambio (ej. `ExchangeRate-API`, `Open Exchange Rates`).
 * **Formato de Datos:** Todos los intercambios de datos (solicitudes y respuestas) utilizan el formato **JSON**.
 * **Uso de Interfaces:** Se ha implementado una interfaz para abstraer la lógica de las APIs de cambio de monedas, permitiendo alternar fácilmente entre ellas.
@@ -40,12 +40,9 @@ Se han implementado los siguientes requisitos no funcionales para asegurar la ro
 
 ## 🛠️ Tecnologías Utilizadas
 
-* **Lenguaje:** **[Python / Java / Node.js / *su elección aquí*]**
-* **Framework Web:** **[Flask / Spring Boot / Express.js / *su elección aquí*]**
-* **APIs de Cambio de Moneda:**
-    * [Nombre de la API 1]
-    * [Nombre de la API 2]
-* **Manejo de Dependencias:** **[pip / Maven / npm / *su elección aquí*]**
+* **Lenguaje:** **[Python / Java / Node.js /]**
+* **Framework Web:** **[Flask / Spring Boot / Express.js /]**
+* **Manejo de Dependencias:** **[pip / Maven / npm /]**
 
 ---
 
