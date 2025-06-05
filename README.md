@@ -1,4 +1,47 @@
-# Sistema de Intercambio de Monedas
+# 💸 YALA - Sistema de Gestión de Cuentas y Transacciones
+
+## 📋 Descripción del Proyecto
+YALA es una aplicación de gestión financiera que permite a los usuarios administrar cuentas en diferentes monedas, realizar transacciones entre ellas y gestionar tipos de cambio.
+
+---
+
+## 🚀 Configuración Inicial
+
+1.  **Clonar el Repositorio:**
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    cd <nombre_del_repositorio>
+    ```
+
+2.  **Configurar Variables de Entorno:**
+    Previo a ejecutar el backend asegurase de 
+    ```
+    API_BACKEND=https:\\localhost:8000
+    ```
+
+3.  **Instalar Dependencias:**
+    ```bash
+    # Para Node.js
+   
+    ```
+    
+### 1️⃣ Clonar el repositorio
+```bash
+git clone https://github.com/Yala-Software/frontend
+cd backend
+```
+
+### 2️⃣ Configurar api backend
+```bash
+API_BACKEND=https:\\localhost:8000
+```
+
+### 3️⃣ Instalar dependencias
+```bash
+npm install
+npm run build
+npm run start
+```
 
 Este proyecto implementa una API para un sistema de intercambio de monedas, permitiendo a los usuarios gestionar saldos en diferentes divisas, realizar transferencias y consultar tasas de cambio en tiempo real.
 
@@ -41,26 +84,6 @@ Se han implementado los siguientes requisitos no funcionales para asegurar la ro
 
 Sigue estos pasos para levantar la aplicación:
 
-1.  **Clonar el Repositorio:**
-    ```bash
-    git clone <URL_DEL_REPOSITORIO>
-    cd <nombre_del_repositorio>
-    ```
-
-2.  **Configurar Variables de Entorno:**
-    Previo a ejecutar el backend asegurase de 
-    ```
-    API_BACKEND=https:\\localhost:8000
-    ```
-
-3.  **Instalar Dependencias:**
-    ```bash
-    # Para Node.js
-    npm install
-    npm run build
-    npm run start
-    ```
-    
 * **Visualización en la Aplicación:**
 ![Uso de la aplicacion](./images/01.png)
 ![Uso de la aplicacion](./images/02.png)
