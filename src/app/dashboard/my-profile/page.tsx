@@ -1,5 +1,6 @@
 "use client";
 
+import { getToken } from "@/services/getToken";
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import {
   Card,
@@ -15,6 +16,9 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
+
+
+const token = getToken();
 
 type User = {
   name: string;
@@ -35,8 +39,6 @@ export default function MyProfilePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
 
-  const getToken = () => localStorage.getItem("token");
-
   useEffect(() => {
     const loadUserProfile = async () => {
       setIsLoading(true);
@@ -44,6 +46,7 @@ export default function MyProfilePage() {
         const token = getToken();
       if (!token) throw new Error("No token available");
 
+        console.log("TOKEN:", token);
         const res = await fetch("http://localhost:8000/api/users/me", {
           headers: {
             Authorization: `Bearer ${token}`,
