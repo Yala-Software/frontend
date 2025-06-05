@@ -40,10 +40,7 @@ Se han implementado los siguientes requisitos no funcionales para asegurar la ro
 
 ## 🛠️ Tecnologías Utilizadas
 
-* **Lenguaje:** **[Python / Java / Node.js /]**
-* **Framework Web:** **[Flask / Spring Boot / Express.js /]**
-* **Manejo de Dependencias:** **[pip / Maven / npm /]**
-
+* **Framework Web:** **[Next.js]**
 ---
 
 ## 🚀 Puesta en Marcha
@@ -57,25 +54,18 @@ Sigue estos pasos para levantar la aplicación:
     ```
 
 2.  **Configurar Variables de Entorno:**
-    Crea un archivo `.env` (o similar) y configura las claves de API necesarias para las APIs de cambio de moneda:
+    Previo a ejecutar el backend asegurase de 
     ```
-    API_KEY_EXCHANGE_RATE_API=tu_clave_api_1
-    API_KEY_OPEN_EXCHANGE_RATES=tu_clave_api_2
+    API_BACKEND=https:\\localhost:8000
     ```
 
 3.  **Instalar Dependencias:**
     ```bash
-    # Para Python
-    pip install -r requirements.txt
-
-    # Para Java (Maven)
-    mvn install
-
     # Para Node.js
     npm install
+    npm run build
+    npm run start
     ```
-
-
 ---
 
 * **Visualización en la Aplicación:**
@@ -95,11 +85,5 @@ Sigue estos pasos para levantar la aplicación:
 * **Interfaz de Usuario:** Una interfaz de usuario basada en [Consola / Web] para interactuar con la API.
 * **Formatos de Exportación:** Posibilidad de exportar historiales o estados de cuenta en formatos como CSV o XML.
 * **Serialización de Datos:** El estado de la aplicación (usuarios, saldos, historial) se serializa para persistir los datos entre reinicios.
-
----
-
-## 🤝 Contribuciones
-
-[Si el proyecto es open source y acepta contribuciones, puedes añadir una sección aquí.]
 
 ---
