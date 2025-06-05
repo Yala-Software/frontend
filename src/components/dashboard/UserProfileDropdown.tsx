@@ -27,8 +27,12 @@ export function UserProfileDropdown() {
         <Button variant="ghost" className="relative h-10 rounded-full px-2">
           <div className="flex items-center gap-2">
             <Avatar className="h-8 w-8">
-              <AvatarImage src={currentUser.avatar || `https://placehold.co/40x40.png?text=${currentUser.name[0]}`} alt={currentUser.name} data-ai-hint="profile person" />
-              <AvatarFallback>{currentUser.name.charAt(0).toUpperCase()}</AvatarFallback>
+              <AvatarImage
+                src={currentUser.avatar || `https://placehold.co/40x40.png?text=${currentUser?.name?.charAt(0) ?? "U"}`}
+                alt={currentUser?.name ?? "User"}
+                data-ai-hint="profile person"
+              />
+              <AvatarFallback>{currentUser?.name?.charAt(0)?.toUpperCase() ?? "U"}</AvatarFallback>
             </Avatar>
             <span className="hidden sm:inline-block text-sm font-medium">{currentUser.name}</span>
           </div>

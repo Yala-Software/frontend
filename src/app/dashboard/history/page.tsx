@@ -14,13 +14,13 @@ interface Transaction {
   id: string;
   date: string;
   type: string;
-  from?: string; // Optional for types like Deposit/Transfer
-  to?: string;   // Optional for types like Deposit/Transfer
-  amountFrom?: string; // For conversions
-  amountTo?: string;   // For conversions
-  toAccount?: string; // For transfers
-  amount?: string; // For transfers/deposits
-  source?: string; // For deposits
+  from?: string;
+  to?: string;
+  amountFrom?: string;
+  amountTo?: string;
+  toAccount?: string;
+  amount?: string;
+  source?: string;
   status: string;
 }
 

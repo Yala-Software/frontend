@@ -18,8 +18,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
 
   useEffect(() => {
-    // Basic check for persisted user, e.g. from localStorage (not secure for real auth)
-    // For this mock, we'll skip this and rely on explicit login actions.
   }, []);
 
   const login = (user: User) => {

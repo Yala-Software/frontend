@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { useAuth } from "@/contexts/AuthContext";
 import { AtSign, Lock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),
@@ -18,6 +19,7 @@ const formSchema = z.object({
 export function LoginForm() {
   const { login } = useAuth();
   const { toast } = useToast();
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -27,14 +29,38 @@ export function LoginForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Mock login
-    const mockUser = { id: "1", name: values.email.split('@')[0] || "User", email: values.email, avatar: `https://placehold.co/100x100.png?text=${values.email[0]?.toUpperCase() || 'U'}` };
-    login(mockUser);
-    toast({
-      title: "Login Successful",
-      description: `Welcome back, ${mockUser.name}!`,
-    });
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const res = await fetch("http://localhost:8000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.message || "Login failed");
+      }
+
+      const data = await res.json();
+
+      localStorage.setItem("token", data.access_token);
+
+      login(data.user);
+
+      toast({
+        title: "Login Successful",
+        description: `Welcome back, ${data.user.name}!`,
+      });
+
+      router.push("/dashboard");
+    } catch (error: any) {
+      toast({
+        title: "Login Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
   }
 
   return (
@@ -62,7 +88,7 @@ export function LoginForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Password</FormLabel>
-               <div className="relative">
+              <div className="relative">
                 <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
                 <FormControl>
                   <Input type="password" placeholder="••••••••" {...field} className="pl-10" />

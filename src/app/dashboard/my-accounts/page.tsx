@@ -31,7 +31,6 @@ export default function MyAccountsPage() {
       if (!userId) {
         toast({ variant: "destructive", title: "Error", description: "User session not found. Please log in again." });
         setIsLoading(false);
-        // Potentially redirect to login, handled by layout
         return;
       }
       try {

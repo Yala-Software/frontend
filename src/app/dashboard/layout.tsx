@@ -23,7 +23,6 @@ export default function DashboardLayout({
   }, [isLoggedIn, router]);
 
   if (!isLoggedIn) {
-    // You can return a loading spinner or null while redirecting
     return <div className="flex h-screen items-center justify-center">Loading...</div>;
   }
   
