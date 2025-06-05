@@ -2,8 +2,6 @@
 
 Este proyecto implementa una API para un sistema de intercambio de monedas, permitiendo a los usuarios gestionar saldos en diferentes divisas, realizar transferencias y consultar tasas de cambio en tiempo real.
 
----
-
 ## 🚀 Requisitos Funcionales
 
 El sistema cumple con los siguientes requisitos funcionales:
@@ -17,7 +15,6 @@ El sistema cumple con los siguientes requisitos funcionales:
     * Entre usuarios en diferentes monedas (realizando la conversión con la tasa online).
 * **Historial de Operaciones:** Permite visualizar el historial de todas las operaciones realizadas por un usuario.
 
----
 
 ## ✨ Requisitos No Funcionales
 
@@ -36,12 +33,9 @@ Se han implementado los siguientes requisitos no funcionales para asegurar la ro
     * **Adapter:** Para normalizar los resultados obtenidos de las diferentes APIs de cambio, asegurando un formato consistente.
     * **Observer:** Para actualizar el historial de transacciones de un usuario automáticamente tras cada operación.
 
----
-
 ## 🛠️ Tecnologías Utilizadas
 
 * **Framework Web:** **[Next.js]**
----
 
 ## 🚀 Puesta en Marcha
 
@@ -66,8 +60,7 @@ Sigue estos pasos para levantar la aplicación:
     npm run build
     npm run start
     ```
----
-
+    
 * **Visualización en la Aplicación:**
 ![Uso de la aplicacion](./images/01.png)
 ![Uso de la aplicacion](./images/02.png)
@@ -76,7 +69,6 @@ Sigue estos pasos para levantar la aplicación:
 ![Uso de la aplicacion](./images/05.png)
 ![Uso de la aplicacion](./images/06.png)
 
----
 
 ## 🌟 Características Opcionales (Si Implementadas)
 
@@ -86,4 +78,3 @@ Sigue estos pasos para levantar la aplicación:
 * **Formatos de Exportación:** Posibilidad de exportar historiales o estados de cuenta en formatos como CSV o XML.
 * **Serialización de Datos:** El estado de la aplicación (usuarios, saldos, historial) se serializa para persistir los datos entre reinicios.
 
----
