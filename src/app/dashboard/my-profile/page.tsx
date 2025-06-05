@@ -21,7 +21,7 @@ import { useToast } from "@/hooks/use-toast";
 const token = getToken();
 
 type User = {
-  name: string;
+  full_name: string;
   username: string;
   email: string;
   createdAt: string;
@@ -31,7 +31,7 @@ type User = {
 export default function MyProfilePage() {
   const { toast } = useToast();
   const [profileData, setProfileData] = useState<Partial<User>>({
-    name: "",
+    full_name: "",
     username: "",
     email: "",
   });
@@ -46,7 +46,6 @@ export default function MyProfilePage() {
         const token = getToken();
       if (!token) throw new Error("No token available");
 
-        console.log("TOKEN:", token);
         const res = await fetch("http://localhost:8000/api/users/me", {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -61,14 +60,14 @@ export default function MyProfilePage() {
 
         const user: User = await res.json();
         setProfileData({
-          name: user.name,
+          full_name: user.full_name,
           username: user.username,
           email: user.email,
           createdAt: user.createdAt,
           avatar: user.avatar,
         });
         setInitialProfileData({
-          name: user.name,
+          full_name: user.full_name,
           username: user.username,
           email: user.email,
           createdAt: user.createdAt,
@@ -101,9 +100,9 @@ export default function MyProfilePage() {
       if (!token) throw new Error("User not authenticated");
       console.log("Token:",token);
 
-      const updates: Partial<Pick<User, "name" | "username" | "email">> = {};
-      if (profileData.name !== initialProfileData.name)
-        updates.name = profileData.name!;
+      const updates: Partial<Pick<User, "full_name" | "username" | "email">> = {};
+      if (profileData.full_name !== initialProfileData.full_name)
+        updates.full_name = profileData.full_name!;
       if (profileData.username !== initialProfileData.username)
         updates.username = profileData.username!;
       if (profileData.email !== initialProfileData.email)
@@ -134,14 +133,14 @@ export default function MyProfilePage() {
 
       const updatedUser: User = await res.json();
       setProfileData({
-        name: updatedUser.name,
+        full_name: updatedUser.full_name,
         username: updatedUser.username,
         email: updatedUser.email,
         createdAt: updatedUser.createdAt,
         avatar: updatedUser.avatar,
       });
       setInitialProfileData({
-        name: updatedUser.name,
+        full_name: updatedUser.full_name,
         username: updatedUser.username,
         email: updatedUser.email,
         createdAt: updatedUser.createdAt,
@@ -197,18 +196,18 @@ export default function MyProfilePage() {
                   src={
                     profileData.avatar ||
                     `https://placehold.co/96x96.png?text=${
-                      profileData.name ? profileData.name[0] : "U"
+                      profileData.full_name ? profileData.full_name[0] : "U"
                     }`
                   }
-                  alt={profileData.name || "User"}
+                  alt={profileData.full_name || "User"}
                   data-ai-hint="profile person"
                 />
                 <AvatarFallback className="text-3xl">
-                  {profileData.name ? profileData.name.charAt(0).toUpperCase() : "U"}
+                  {profileData.full_name ? profileData.full_name.charAt(0).toUpperCase() : "U"}
                 </AvatarFallback>
               </Avatar>
               <div>
-                <h2 className="text-2xl font-semibold">{initialProfileData.name}</h2>
+                <h2 className="text-2xl font-semibold">{initialProfileData.full_name}</h2>
                 <p className="text-muted-foreground">{initialProfileData.email}</p>
               </div>
             </div>
@@ -220,7 +219,7 @@ export default function MyProfilePage() {
                 <Input
                   id="name"
                   name="name"
-                  value={profileData.name || ""}
+                  value={profileData.full_name || ""}
                   onChange={handleChange}
                   className="pl-10"
                   placeholder="Your full name"
@@ -281,7 +280,7 @@ export default function MyProfilePage() {
               disabled={
                 isSaving ||
                 isLoading ||
-                (profileData.name === initialProfileData.name &&
+                (profileData.full_name === initialProfileData.full_name &&
                   profileData.username === initialProfileData.username &&
                   profileData.email === initialProfileData.email)
               }

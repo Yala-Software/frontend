@@ -43,24 +43,34 @@ export function LoginForm() {
       }
 
       const data = await res.json();
-
       localStorage.setItem("token", data.access_token);
 
-      login(data.user);
+      const userRes = await fetch("http://localhost:8000/api/users/me", {
+        headers: {
+          Authorization: `Bearer ${data.access_token}`,
+        },
+      });
+
+      if (!userRes.ok) {throw new Error("No se pudo obtener el usuario");}
+
+      const user = await userRes.json();
+      login(user);
+      //temp
+      console.log("Usuario obtenido:", user);
 
       toast({
         title: "Login Successful",
-        description: `Welcome back, ${data.user.name}!`,
+        description: `Welcome back, ${user.full_name || user.username || "user"}!`,
       });
 
       router.push("/dashboard");
     } catch (error: any) {
-      toast({
-        title: "Login Failed",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
+        toast({
+          title: "Login Failed",
+          description: error.message,
+          variant: "destructive",
+        });
+      }
   }
 
   return (

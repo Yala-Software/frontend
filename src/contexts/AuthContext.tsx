@@ -22,7 +22,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const login = (user: User) => {
     setCurrentUser(user);
-    localStorage.setItem('mockUserId', user.id);
+    if (user.id){
+      localStorage.setItem('mockUserId', user.id);
+    }
     router.push('/dashboard');
   };
 
