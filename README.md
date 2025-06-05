@@ -7,23 +7,7 @@ YALA es una aplicación de gestión financiera que permite a los usuarios admini
 
 ## 🚀 Configuración Inicial
 
-1.  **Clonar el Repositorio:**
-    ```bash
-    git clone <URL_DEL_REPOSITORIO>
-    cd <nombre_del_repositorio>
-    ```
 
-2.  **Configurar Variables de Entorno:**
-    Previo a ejecutar el backend asegurase de 
-    ```
-    API_BACKEND=https:\\localhost:8000
-    ```
-
-3.  **Instalar Dependencias:**
-    ```bash
-    # Para Node.js
-   
-    ```
     
 ### 1️⃣ Clonar el repositorio
 ```bash
