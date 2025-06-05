@@ -78,17 +78,6 @@ Sigue estos pasos para levantar la aplicación:
     npm install
     ```
 
-4.  **Ejecutar la Aplicación:**
-    ```bash
-    # Para Python (Flask)
-    flask run
-
-    # Para Java (Spring Boot)
-    java -jar target/your-app.jar
-
-    # Para Node.js (Express)
-    node app.js
-    ```
 
 ---
 
