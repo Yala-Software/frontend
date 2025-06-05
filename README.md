@@ -79,7 +79,7 @@ Sigue estos pasos para levantar la aplicación:
 ---
 
 * **Visualización en la Aplicación:**
-   ![Uso de la aplicacion](./images/01.png)
+![Uso de la aplicacion](./images/01.png)
 ![Uso de la aplicacion](./images/02.png)
 ![Uso de la aplicacion](./images/03.png)
 ![Uso de la aplicacion](./images/04.png)
@@ -103,7 +103,3 @@ Sigue estos pasos para levantar la aplicación:
 [Si el proyecto es open source y acepta contribuciones, puedes añadir una sección aquí.]
 
 ---
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia **[Nombre de la Licencia, ej. MIT License]**.
